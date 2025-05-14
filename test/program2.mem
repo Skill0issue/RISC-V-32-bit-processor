@@ -1,0 +1,6 @@
+00000013  // NOP (ADDI x0, x0, 0)
+00100093  // ADDI x1, x0, 1
+00200113  // ADDI x2, x0, 2
+002081b3  // ADD x3, x1, x2 => x3 = 3
+00310023  // SW x3, 0(x2)   ; Store x3 at address in x2 (data_mem)
+00000013  // NOP

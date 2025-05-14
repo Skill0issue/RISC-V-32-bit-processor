@@ -1,0 +1,21 @@
+// Format: One 32-bit instruction per line, in hex
+// Assumes memory with PC starting at 0x0
+
+// LUI x1, 0x00010      => x1 = 0x00010000
+00010137
+// ADDI x2, x1, 5       => x2 = x1 + 5 = 0x00010005
+00510113
+// SW x2, 0(x0)         => store x2 to MEM[0]
+00212023
+// LW x3, 0(x0)         => x3 = MEM[0] = x2
+00012283
+// SUB x4, x3, x2       => x4 = x3 - x2 = 0
+402282b3
+// BEQ x4, x0, +8       => if x4 == 0 jump +8 bytes (2 instr)
+00028663
+// ADDI x5, x0, 42      => skipped if branch is taken
+02a00293
+// ADDI x6, x0, 99      => reached if branch worked
+06300313
+// JAL x0, -12          => loop back 3 instr (infinite loop)
+ff5ff06f

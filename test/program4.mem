@@ -1,0 +1,22 @@
+//    assign opcode = instruction[6:0];
+//    assign rd     = instruction[11:7];
+//    assign funct3 = instruction[14:12];
+//    assign rs1    = instruction[19:15];
+//    assign rs2    = instruction[24:20];
+//    assign funct7 = instruction[31:25];
+
+// non immediate
+// opcode (7 bits) | rd (5 bits) | func3 (3 bits) | rs1 (3 bits) | rs2 (3 bits) | func7 (7 bits)
+
+// immediate 
+// opcode (7 bits) | rd (5 bits) | func3 (3 bits) | rs1 (5 bits) | imm (12 bits)
+
+
+    //(000000000001 00000 000 00001 0010011)
+    //(000000000010 00000 000 00001 0110011)
+    //(000000000011 00001 000 00010 0110011)
+
+01400093  // addi x1, x0, 20
+01408113 // addi x2, x1, 20
+002101b3  // add x3, x2, x1
+
